@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>数组常用方法（前端）</title>
+      <link href="/2022/11/21/%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%88%E5%89%8D%E7%AB%AF%EF%BC%89/"/>
+      <url>/2022/11/21/%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%88%E5%89%8D%E7%AB%AF%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-toString"><a href="#1-toString" class="headerlink" title="1.toString()"></a>1.toString()</h2><p>将数组转化为字符串，<strong>自身不变</strong>，返回字符串</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log([&#x27;ranran&#x27;,&#x27;dongdong&#x27;])    // &#x27;ranran,dongdong&#x27;</span><br></pre></td></tr></table></figure><h2 id="2-join"><a href="#2-join" class="headerlink" title="2.join()"></a>2.join()</h2><p>按照指定字符拼接为字符串,<strong>自身不变</strong>，返回字符串</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log([2015, 05, 12].join(&quot;-&quot;))  //&#x27;2015-05-12&#x27;</span><br></pre></td></tr></table></figure><h2 id="3-concat-…"><a href="#3-concat-…" class="headerlink" title="3.concat( , , …)"></a>3.concat( , , …)</h2><p>数组拼接，<strong>原数组不变</strong>，返回新的数组</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr1 = [1, 2, 3, 4];      </span><br><span class="line">let arr2 = [5, 6, 7, 8];</span><br><span class="line">let arr3 = [1, 2, 3, 4];</span><br><span class="line">console.log(arr1.concat(arr2, arr3));       // [1,2,3,4,5,6,7,8,1,2,3,4]</span><br></pre></td></tr></table></figure><h2 id="4-reverse"><a href="#4-reverse" class="headerlink" title="4. reverse()"></a>4. reverse()</h2><p>翻转数组，<strong>原数组翻转，不返回值</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr1 = [1, 2, 3, 4];      </span><br><span class="line">let res = arr1.reverse()</span><br><span class="line">console.log(res);       // undefined</span><br><span class="line">console.log(arr1)       //[4,3,2,1]</span><br></pre></td></tr></table></figure><h2 id="未完成施工…"><a href="#未完成施工…" class="headerlink" title="未完成施工…"></a>未完成施工…</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端，javascript，面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS判断数据类型的方法</title>
+      <link href="/2022/11/21/js%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+      <url>/2022/11/21/js%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><ol><li>作用：用于判断<strong>基本类型</strong>的值</li><li>结果(返回字符串)：<br> – 判断基本类型的值均准确，除开null<br> – 引用类型都为Object,除开function <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typeof &#x27;&#x27;             // string</span><br><span class="line">typeof NaN            // number</span><br><span class="line">typeof undefined      // undefined</span><br><span class="line">typeof null           // object</span><br><span class="line">typeof []             //object</span><br><span class="line">typeof newFunction()  // function</span><br></pre></td></tr></table></figure></li></ol><h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><ol><li>作用：<br> – 用于引用类型判断(准确)<br> – 是否为其的实例</li><li>用法： A instanceof B  判断A是否为B的实例</li><li>原理<br>instanceof 在查找过程中会遍历左侧变量的原型链，看是否存在右侧变量的prototype<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">引用类型 instanceof Object   // true</span><br><span class="line">基本类型 instanceof Object   // false</span><br></pre></td></tr></table></figure></li></ol><h2 id="Object-prototype-toString-最准确"><a href="#Object-prototype-toString-最准确" class="headerlink" title="Object.prototype.toString(最准确)"></a>Object.prototype.toString(最准确)</h2><ol><li>概念：toString()是Object原型上的方法，可以返回调用者的具体类型</li><li>使用方式：<code>Object.prototype.toString.call(需判断变量)</code><br><strong>原因：</strong> 有很多类型自身也带有toString()方法，所以要用.call()让其指向Object，使用Object的toString()方法<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.toString.call(&#x27;&#x27;)                 // [object String]</span><br><span class="line">Object.prototype.toString.call(1)                  // [object Number]</span><br><span class="line">Object.prototype.toString.call(udnefined)          // [object Undefined]</span><br><span class="line">Object.prototype.toString.call(null)               // [object Null]</span><br><span class="line">Object.prototype.toString.call(new funciton())     // [object Function]</span><br><span class="line">Object.prototype.toString.call(new RepExp())       // [object RegExp]</span><br><span class="line">Object.prototype.toString.call([])                 // [object Array]</span><br><span class="line">Object.prototype.toString.call(new Date())         // [object Date]</span><br><span class="line">Object.prototype.toString.call(new RepExp())       // [object RegExp]</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 前端，javascript，面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>深拷贝方式</title>
+      <link href="/2022/11/21/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%96%B9%E5%BC%8F/"/>
+      <url>/2022/11/21/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%96%B9%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="主要思路"><a href="#主要思路" class="headerlink" title="主要思路"></a>主要思路</h2><ol><li>判断传入值是否为引用类型，不是则返回</li><li>创建一个新的空数组或对象，准备接收并等到最后抛出</li><li>for in遍历这个对象或数组，使用obj.hasOwnProperty(prop)判断obj是否具有prop属性，因为for in循环会遍历原型的属性</li><li>利用递归一一赋值<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function deepClone(obj = &#123;&#125;) &#123;</span><br><span class="line">    // 判断传入的值是否为引用类型  若不是则直接返回</span><br><span class="line">    if (typeof obj !== &#x27;object&#x27; || obj == null) return obj</span><br><span class="line">    // 初始化返回结果,是对象还是数组</span><br><span class="line">    let res</span><br><span class="line">    if (obj instanceof Array) &#123;</span><br><span class="line">    res = []</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">    res = &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // 遍历</span><br><span class="line">    for (let key in obj) &#123;</span><br><span class="line">    // for in遍历会遍历原型上的属性 所以需要判断是否是自己的属性</span><br><span class="line">    if (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">        res[key] = deepClone(obj[key])</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端工作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>日期格式的处理（前端）</title>
+      <link href="/2022/11/21/%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%EF%BC%88%E5%89%8D%E7%AB%AF%EF%BC%89/"/>
+      <url>/2022/11/21/%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%EF%BC%88%E5%89%8D%E7%AB%AF%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h2 id="日期处理步骤"><a href="#日期处理步骤" class="headerlink" title="日期处理步骤"></a>日期处理步骤</h2><ol><li>定义规则，若未定义规则为’yy-MM-dd hh:mm:ss’</li><li>确立关于正则的映射</li><li>遍历，并补0<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">formateDate(date,rule) &#123;</span><br><span class="line">    // 1、定义规则</span><br><span class="line">    let fmt = rule || &#x27;yyyy-MM-dd hh:mm:ss&#x27; ;</span><br><span class="line">    // 2、定义正则映射关系(年份是4位，单独)</span><br><span class="line">    const o = &#123;</span><br><span class="line">        &#x27;M+&#x27;: date.getMonth() + 1,</span><br><span class="line">        &#x27;d+&#x27;: date.getDate(),</span><br><span class="line">        &#x27;h+&#x27;: date.getHours(),</span><br><span class="line">        &#x27;m+&#x27;:date.getMinutes(),</span><br><span class="line">        &#x27;s+&#x27;: date.getSeconds()</span><br><span class="line">    &#125;</span><br><span class="line">    if (/(y+)/.test(fmt)) &#123;</span><br><span class="line">        fmt = fmt.replace(RegExp.$1,date.getFullYear())</span><br><span class="line">    &#125;</span><br><span class="line">    // 遍历映射关系</span><br><span class="line">    for (let k in o) &#123;</span><br><span class="line">        // 传入规则中是否有年月日...</span><br><span class="line">        if (new RegExp(`($&#123;k&#125;)`).test(fmt)) &#123;</span><br><span class="line">            let val = o[k] + &#x27;&#x27;</span><br><span class="line">            // 进行替换，RegExp.$1取最近的子表达式,并补0</span><br><span class="line">            fmt = fmt.replace(RegExp.$1,(&#x27;00&#x27; + val).substring(val.length))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return fmt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端工作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端，javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue全局对象的挂载</title>
+      <link href="/2022/11/21/vue%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8C%82%E8%BD%BD/"/>
+      <url>/2022/11/21/vue%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8C%82%E8%BD%BD/</url>
+      
+        <content type="html"><![CDATA[<h2 id="在vue2中的应用"><a href="#在vue2中的应用" class="headerlink" title="在vue2中的应用"></a>在vue2中的应用</h2><ol><li>挂载 – 在main.js中<br><code>Vue.prototype.$api = () =&gt; &#123; ... &#125;</code></li><li>使用<br><code>this.$api.定义的方法</code></li></ol><hr><h2 id="在vue3中的应用"><a href="#在vue3中的应用" class="headerlink" title="在vue3中的应用"></a>在vue3中的应用</h2><ol><li>挂载 – 在main.js中<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createApp &#125; from &#x27;vue&#x27;</span><br><span class="line">import App from &#x27;./App.vue&#x27;</span><br><span class="line">const app = createApp(App);</span><br><span class="line">app.config.globalProperties.$api = () =&gt; &#123; ... &#125;</span><br></pre></td></tr></table></figure></li><li>使用&lt;vue3不推荐使用全局挂载&gt;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//方法一</span><br><span class="line">import &#123; getCurrentInstance &#125; from &#x27;vue&#x27;</span><br><span class="line">export default&#123;</span><br><span class="line">    set up() &#123;</span><br><span class="line">        const instance = getCurrentInstance()</span><br><span class="line">        instance.appContext.config.globalProperties.$api</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 方法二</span><br><span class="line">import &#123; getCurrentInstance &#125; from &#x27;vue&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    set up() &#123;</span><br><span class="line">        const &#123; proxy &#125; = getCurrentInstance()</span><br><span class="line">        proxy.$api</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端工作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试页面一</title>
+      <link href="/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80/"/>
+      <url>/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80/</url>
+      
+        <content type="html"><![CDATA[<h2 id="未完成施工…"><a href="#未完成施工…" class="headerlink" title="未完成施工…"></a>未完成施工…</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 面试，java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试页面二</title>
+      <link href="/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%202/"/>
+      <url>/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%202/</url>
+      
+        <content type="html"><![CDATA[<h2 id="未完成施工…"><a href="#未完成施工…" class="headerlink" title="未完成施工…"></a>未完成施工…</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 并发 </tag>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试页面三</title>
+      <link href="/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%203/"/>
+      <url>/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%203/</url>
+      
+        <content type="html"><![CDATA[<h2 id="未完成施工…"><a href="#未完成施工…" class="headerlink" title="未完成施工…"></a>未完成施工…</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> html </tag>
+            
+            <tag> css </tag>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试页面四</title>
+      <link href="/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%204/"/>
+      <url>/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%204/</url>
+      
+        <content type="html"><![CDATA[<h2 id="未完成施工…"><a href="#未完成施工…" class="headerlink" title="未完成施工…"></a>未完成施工…</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> js </tag>
+            
+            <tag> element-UI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试页面五</title>
+      <link href="/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%205/"/>
+      <url>/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%205/</url>
+      
+        <content type="html"><![CDATA[<h2 id="未完成施工…"><a href="#未完成施工…" class="headerlink" title="未完成施工…"></a>未完成施工…</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+            <tag> css </tag>
+            
+            <tag> javascript </tag>
+            
+            <tag> bootstrap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试页面六</title>
+      <link href="/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%206/"/>
+      <url>/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%206/</url>
+      
+        <content type="html"><![CDATA[<h2 id="未完成施工…"><a href="#未完成施工…" class="headerlink" title="未完成施工…"></a>未完成施工…</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试页面七</title>
+      <link href="/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%207/"/>
+      <url>/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy%207/</url>
+      
+        <content type="html"><![CDATA[<h2 id="未完成施工…"><a href="#未完成施工…" class="headerlink" title="未完成施工…"></a>未完成施工…</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 面试 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试页面八</title>
+      <link href="/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy/"/>
+      <url>/2022/11/21/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2%E4%B8%80%20copy/</url>
+      
+        <content type="html"><![CDATA[<h2 id="未完成施工…"><a href="#未完成施工…" class="headerlink" title="未完成施工…"></a>未完成施工…</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
